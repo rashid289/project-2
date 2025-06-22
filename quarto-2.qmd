@@ -1,5 +1,22 @@
 ---
 title: "Quarto 2"
+author: "Rashid Abbasi"
+execute: 
+  echo: false
 format: html
 ---
+```{r}
+#| message: false
+library(tidyverse)
+library(palmerpenguins)
+```
 
+```{r}
+#| warning: false
+penguins |> 
+  ggplot(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
+    geom_point() +
+    labs(title = "Penguins Body Mass compared to Flipper Length", 
+         x = "Body Mass", 
+         y = "Flipper Length")
+```
